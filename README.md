@@ -112,7 +112,7 @@ In keeping with the overall *sweet* theme, I have opted for a bright and colorfu
 
 For my wireframes, I have used [Balsamiq Wireframes](https://balsamiq.com/) as it is quite easy to use.
 
-All of my wireframes for this project can be found [here](https://github.com/mesub-directory.
+All of my wireframes for this project can be found [here](https://github.com/SabihaAfroze/gourmet_story-mp-3/tree/master/wireframes).
 
 ##### back to [top](#table-of-contents)
 

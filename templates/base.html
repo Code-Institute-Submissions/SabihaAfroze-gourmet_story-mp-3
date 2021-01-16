@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -12,20 +14,49 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>{% block title %}{% endblock %}Gourmet story</title>
 </head>
+
 <body>
-    <h1>Welcome to the recipes of diverse collection!</h1>
-    {% block content %}
-    {% endblock %}
+    <header>
+        <!-- top navbar -->
+        <nav class="nav-style">
+            <div class="nav-wrapper">
+
+                <a href="#!" class="brand-logo center logo-style"><img
+                        src="{{ url_for('static', filename='img/logo.PNG') }}" alt="gourmet story logo"
+                        lazyload="on"></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down nav-ul-style">
+                    <li><a href="#"><i class="fas fa-search"></i></a></li>
+                    <li style="padding-top:4px;"><a href="#">All Recipe</a></li>
+                    <li><a href="#">LogIn/Register <i class="fas fa-user"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Login/Register</a></li>
+            <li><a href="#">All Recipe</a></li>
+            
+        </ul>
+
+    </header>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
 
 
 
     <script src="https://code.jquery.com/jquery-3.4.0.slim.js"
         integrity="sha256-milezx5lakrZu0OP9b2QWFy1ft/UEUK6NH1Jqz8hUhQ=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+
     {% block js %}
     {% endblock %}
-    
+
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
+
 </html>

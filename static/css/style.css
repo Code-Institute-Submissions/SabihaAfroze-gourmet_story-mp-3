@@ -1,0 +1,17 @@
+
+body{
+    background-color: beige;
+}
+.nav-style{
+    background-color:rgb(251, 207, 84);
+    
+}
+
+.logo-style img{
+    height: 40%;
+    width: 40%;
+}
+
+.nav-ul-style li{
+    color:#534825;
+}

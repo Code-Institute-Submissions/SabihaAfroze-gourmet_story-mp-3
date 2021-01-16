@@ -43,9 +43,7 @@ You love to explore foods and want to have your own cookbook? You've come to the
 
 ## UX
 
-This project is part of my [Code Institute](https://codeinstitute.net/) Full Stack Software Development studies, specifically the **Data Centric Development** module. The objective for this milestone project is to "*Create a web application that allows users to store and easily access cooking recipes*", using the **CRUD** operations of **C**reate, **R**ead, **U**pdate, and **D**elete for their recipes.
-
-I have decided to build a desserts-only project, since I personally bake quite regularly, and several of my own recipes are compiled in different places (kitchen cabinet, saved online, printed and shoved in a drawer, etc.). This was the perfect opportunity to finally have a single application to contain all of my own recipes in one source. A lot of people often ask me for specific recipes, so now I can quickly provide a single source for all of my recipes that can easily be shared or printed. It also allows others to store their own recipes securely.
+I have decided to build an online cookbook project, since I personally like to cook a lot and try to maintain my own cookbook. When it is an online cookbook, it will be easier to use and share with others. It also allows others to store their own recipes securely.
 
 ### User Stories
 
@@ -90,12 +88,6 @@ I like bright and cheerful colors and designs for my website.
 
 #### Color Scheme
 
-In keeping with the overall *sweet* theme, I have opted for a bright and colorful color scheme. These standard [Materialize Colors](https://materializecss.com/color.html) work quite well for my project.
-
-- ![#9C27B0](https://placehold.it/15/9C27B0/9C27B0) `#9C27B0` (**purple** - *primary color*)
-- ![#F06292](https://placehold.it/15/F06292/F06292) `#F06292` (**pink lighten-2** - *secondary color*)
-- ![#2196F3](https://placehold.it/15/2196F3/2196F3) `#2196F3` (**blue** - *tertiary color*)
-- ![#4CAF50](https://placehold.it/15/4CAF50/4CAF50) `#4CAF50` (**green** - *quaternary color*)
 
 #### Icons
 
@@ -120,7 +112,7 @@ All of my wireframes for this project can be found [here](https://github.com/Sab
 
 ## Features
 
-I've added a few extra features to my project that weren't part of the requirements, because I felt they made the project 'complete' for better user interaction.
+Cuurently I can not build the whole project, just submitting the idea of whole project.
 
 ### Existing Features
 
@@ -353,7 +345,6 @@ This site is currently deployed on [Heroku](https://www.heroku.com/) using the *
     - **MONGO_URI** : `<link to your Mongo DB>`
     - **SECRET_KEY** : `<your own secret key>`
     - **MY_ADDRESS** : `<your own email address>`
-    - **SEND_TO** : `<recipient email address>`
     - **PASSWORD** : `<you own email password>`
 5. The app should be successfully deployed to Heroku at this point.
 

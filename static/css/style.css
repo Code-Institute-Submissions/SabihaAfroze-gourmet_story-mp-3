@@ -15,3 +15,8 @@ body{
 .nav-ul-style li{
     color:#534825;
 }
+
+.footer-color{
+    background-color:rgb(251, 207, 84);
+    color:#534825;
+}

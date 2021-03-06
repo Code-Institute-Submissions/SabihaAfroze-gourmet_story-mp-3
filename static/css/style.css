@@ -28,6 +28,10 @@ main {
     color:#534825;
 }
 
+.flashes h5 {
+    line-height: 3;
+}
+
 footer {
     
     line-height: 2em;

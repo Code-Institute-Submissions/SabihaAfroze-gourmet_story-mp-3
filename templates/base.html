@@ -21,21 +21,21 @@
         <nav class="nav-style">
             <div class="nav-wrapper">
 
-                <a href="#!" class="brand-logo center logo-style"><img
+                <a href="#!" class="brand-logo left logo-style"><img
                         src="{{ url_for('static', filename='img/logo.PNG') }}" alt="gourmet story logo"
                         lazyload="on"></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down nav-ul-style">
                     <li><a href="#"><i class="fas fa-search"></i></a></li>
                     <li style="padding-top:4px;"><a href="#">All Recipe</a></li>
-                    <li><a href="#">LogIn/Register <i class="fas fa-user"></i></a></li>
+                    <li><a href="{{url_for('register')}}">LogIn/Register <i class="fas fa-user"></i></a></li>
                 </ul>
             </div>
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Login/Register</a></li>
+            <li><a href="register.html">Login/Register</a></li>
             <li><a href="#">All Recipe</a></li>
             
         </ul>

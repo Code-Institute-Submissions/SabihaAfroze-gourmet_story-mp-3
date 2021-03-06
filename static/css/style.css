@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&family=Ravi+Prakash&display=swap');
+
 
 body{
     background-color: beige;
@@ -45,4 +47,8 @@ footer {
 
 .footer-text-color{
     color:#534825;
+}
+
+.register{
+    font-family: 'Aladin', cursive;
 }

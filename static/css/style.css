@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&display=swap');
 
 body{
     background-color: beige;
     min-height: 100vh;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
+
+main {
+    flex: 1 0 auto;
+  }
+    
 .nav-style{
     background-color:rgb(251, 207, 84);
     
@@ -19,15 +27,19 @@ body{
 }
 
 footer {
-    font-size: 1.5em;
+    
     line-height: 2em;
     padding-top: 1em;
-    border-bottom: 2px solid rgb(251, 207, 84), 1;
+    
     
 }
 
-.footer-color{
+.footer-style{
     background-color:rgb(251, 207, 84);
+    color:#534825;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: small;
+    
     
 }
 

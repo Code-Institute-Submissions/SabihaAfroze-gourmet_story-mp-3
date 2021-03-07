@@ -28,6 +28,7 @@
                 <ul class="right hide-on-med-and-down nav-ul-style">
                     <li><a href="#"><i class="fas fa-search"></i></a></li>
                     <li style="padding-top:4px;"><a href="#">All Recipe</a></li>
+                    <li><a href="{{url_for('profile',username=session['user'])}}">Profile</a></li>
                     <li><a href="{{url_for('register')}}">LogIn/Register <i class="fas fa-user"></i></a></li>
                 </ul>
             </div>

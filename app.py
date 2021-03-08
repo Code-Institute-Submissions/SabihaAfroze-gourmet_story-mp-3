@@ -105,8 +105,8 @@ def add_recipe():
             "recipe_description": request.form.get("recipe_description"),
             "add_favs": add_favs,
             "ingredient_amount": request.form.getlist("ingredient_amount"),
-            "ingredient_measurement": request.form.getlist(
-                "ingredient_measurement"),
+            "measurement_units": request.form.getlist(
+                "measurement_units"),
             "ingredient_name": request.form.getlist("ingredient_name"),
             "directions": request.form.getlist("directions"),
             "total_hours": request.form.get("total_hrs"),
@@ -120,13 +120,29 @@ def add_recipe():
         return redirect(url_for("get_recipes"))
 
     categories = mongo.db.categories.find().sort("recipe_category", 1)
-    return render_template("add_recipe.html", categories=categories)
+    measurements = mongo.db.measurements.find().sort(
+        "measurement_units", 1)
+    return render_template("add_recipe.html", categories=categories
+    , measurements=measurements)
 
 
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("recipe_category", 1))
     return render_template("categories.html", categories=categories)
+
+
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    if request.method == "POST":
+        category = {
+            "recipe_category": request.form.get("recipe_category")
+        }
+        mongo.db.categories.insert_one(category)
+        flash("New Category Added")
+        return redirect(url_for("get_categories"))
+
+    return render_template("add_category.html")
 
 
 

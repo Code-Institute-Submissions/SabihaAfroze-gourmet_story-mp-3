@@ -120,23 +120,13 @@
 
                         <div class="input-field col s12 m3 l2">
                             <i class="fas fa-utensil-spoon light-blue-text text-darken-4 material-icons prefix" aria-hidden="true"></i>
-                            <select class="icon">
-                                <option value="" disabled selected></option>
-                                <option value="1">gram</option>
-                                <option value="2">kilogram</option>
-                                <option value="3">litre</option>
-                                <option value="4">mililitre</option>
-                                <option value="5">cup</option>
-                                <option value="6">fluid ounce</option>
-                                <option value="7">ounce</option>
-                                <option value="8">pint</option>
-                                <option value="9">pound</option>
-                                <option value="10">quart</option>
-                                <option value="11">teaspoon</option>
-                                <option value="12">tablespoon</option>
-                                <option value="13">not applicable</option>
+                            <select id="measurement_units" name="measurement_units" class="form-control validate" required>
+                             <option value="" disabled selected>Choose...</option>
+                                {% for measurement in measurements %}
+                                    <option value="{{measurement_units}}">{{measurement_units}}</option>
+                                {% endfor %}
                             </select>
-                            <label>Materialize Select</label>
+                            <label for="measurement_units">Select</label>
                         </div>
 
                         <!-- ingredient -->

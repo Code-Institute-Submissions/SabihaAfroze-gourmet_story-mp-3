@@ -24,6 +24,7 @@
 
  });
 
+
  $(".add-ingredient").on("click", function () {
         addIngredient($(this).parent(".new-ingredient"));
     });

@@ -123,6 +123,12 @@ def add_recipe():
     return render_template("add_recipe.html", categories=categories)
 
 
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort("recipe_category", 1))
+    return render_template("categories.html", categories=categories)
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

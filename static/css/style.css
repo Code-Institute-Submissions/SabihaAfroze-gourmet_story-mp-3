@@ -56,3 +56,8 @@ footer {
 .register{
     font-family: 'Aladin', cursive;
 }
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}

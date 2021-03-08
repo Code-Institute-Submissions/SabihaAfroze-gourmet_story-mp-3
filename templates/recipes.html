@@ -1,22 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="container-95">
 
+    <div class="row flex">  
     <!-- All recipe cards -->
-    <div class="row">
-        <!-- Cards : without search -->
-        {% if recipes_search == "" %}
-            {% for recipe in recipes_start %}
-                {% include "fragments/_cards.html" %}
-            {% endfor %}
-        {% else %}
-        <!-- cards : with search -->
-            {% for recipe in recipes_search %}
-                {% include "fragments/_cards.html" %}
-            {% endfor %}
-        {% endif %}
-    </div>
+    {% for recipe in recipes %}
+    
+    
+        
+        <div class="col s12 m6 l3">
+        
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{recipe.img_src}}" class="activator" alt="Recipe" lazyload="on">
+                        <a href="" class="halfway-fab btn-floating pink pulse">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                        <span class="card-title"><strong>{{recipe.recipe_category}} : {{recipe.recipe_name}}</strong></span>
+                </div>
+        
+                <div class="card-content">
+                    <p>{{recipe.recipe_description}}</p>
+                </div>
+        
+                <div class="card-action">
+                    <a href="#">Full recipe</a>
+                </div>
+            </div>
+
+        </div>
+
+    
+  
+    {% endfor %}
+</div>
+
 
 {% endblock %}
 

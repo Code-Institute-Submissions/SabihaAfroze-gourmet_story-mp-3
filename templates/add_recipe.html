@@ -16,7 +16,7 @@
                         <i class="fas fa-book prefix light-blue-text text-darken-4"></i>
                         <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
                         type="text" class="validate" required>
-                        <label for="recipe_name">Your recipe name</label>
+                        <label for="recipe_name">Recipe name</label>
                     </div>
                 </div>
             
@@ -41,17 +41,33 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                        <textarea id="task_description" name="task_description" minlength="5"
+                        <textarea id="recipe_description" name="recipe_description" minlength="5"
                         maxlength="200" class="materialize-textarea validate" required></textarea>
-                        <label for="task_description">Give a short description of you recipe</label>
+                        <label for="recipe_description">A brief of your recipe</label>
                     </div>
+                </div>
+
+                <!-- recipe photo -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-image light-blue-text text-darken-4 material-icons prefix" aria-hidden="true"></i>
+                        <input id="img_src" name="img_src" class="validate" type="url" minlength="15"
+                        placeholder="Recipe Photo URL" pattern="https?:\/\/.+(jpg|jpeg|gif|bmp|png|tiff)" autocomplete="off">
+                        <label for="img_src">optional
+                        <i class="fas fa-question-circle tooltipped" data-position="right"
+                        data-tooltip="If you don't have one, we'll add one<br>for you based on your recipe!" aria-hidden="true"></i>
+                        </label>
+                        <h5 id="img_error" class="red-text bold center-align"></h5>
+                    </div>
+                
+                <div id="img_new" class="col s12 center-align"></div>
                 </div>
                 
                 <div class="row">
 			        <!-- total hours -->
                     <div class="input-field col s6 m3">
                         <i class="fas fa-hourglass-half light-blue-text text-darken-4   material-icons prefix" aria-hidden="true"></i>
-                        <input id="total_hrs" name="total_hrs" type="number" min="0" max="99"
+                        <input id="total_hours" name="total_hours" type="number" min="0" max="99"
                         placeholder="Hours" class="validate" autocomplete="off">
                         <label for="total_hrs">
                             optional
@@ -63,9 +79,9 @@
                     <!-- total minutes -->
                     <div class="input-field col s6 m3">
                         <i class="fas fa-stopwatch light-blue-text text-darken-4 material-icons prefix" aria-hidden="true"></i>
-                        <input id="total_mins" name="total_mins" type="number" min="0" max="59"
-                        placeholder="Minutes" autocomplete="off" class="form-control validate" required>
-                        <label for="total_mins">
+                        <input id="total_minutes" name="total_minutes" type="number" min="0" max="59"
+                        placeholder="minutes" autocomplete="off" class="form-control validate" required>
+                        <label for="total_minutes">
                         <span class="red-text">*</span>
                         required
                         <i class="fas fa-question-circle hide-on-small-only tooltipped"
@@ -81,23 +97,11 @@
                     </div>
                 </div>
             
-                <!-- recipe photo -->
-                <div class="input-field col s12">
-                    <i class="fas fa-image light-blue-text text-darken-4 material-icons prefix" aria-hidden="true"></i>
-                    <input id="img_src" name="img_src" class="validate" type="url" minlength="15"
-                    placeholder="Recipe Photo URL" pattern="https?:\/\/.+(jpg|jpeg|gif|bmp|png|tiff)" autocomplete="off">
-                    <label for="img_src">optional
-                    <i class="fas fa-question-circle tooltipped" data-position="right"
-                        data-tooltip="If you don't have one, we'll add one<br>for you based on your recipe!" aria-hidden="true"></i>
-                    </label>
-                    <h5 id="img_error" class="red-text bold center-align"></h5>
-                </div>
-
-                <div id="img_new" class="col s12 center-align"></div>
+                
             </div>
 
             <!-- Ingredients -->
-            <div class="row card z-depth-2 recipe-card new-recipe">
+            <div class="row card recipe-card new-recipe">
                 <h4 class="teal-text text-darken-1 center-align">Ingredients</h4>
                     <div class="new-ingredient ingredient row">
                         <!-- ingredient amount / quantity -->

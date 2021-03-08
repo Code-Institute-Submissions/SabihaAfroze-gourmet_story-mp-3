@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="teal-text text-darken-1 center-align">Edit Recipe</h3>
+
+    <div class="row card-panel grey lighten-5">
+        <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+            
+            <!-- RECIPE DETAILS -->
+            
+            <div class="container-75">
+                <!-- recipe name -->
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-book prefix light-blue-text text-darken-4"></i>
+                        <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
+                        type="text" class="validate" required>
+                        <label for="recipe_name">Recipe name</label>
+                    </div>
+                </div>
+            
+                <!-- recipe category -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-cocktail prefix light-blue-text text-darken-4"></i>
+                        <select id="recipe_category" name="recipe_category" class="form-control validate" required>
+                             <option value="" disabled selected>Choose Category</option>
+                        {% for category in categories %}
+                            <option value="{{ category.recipe_category }}">{{ category.recipe_category}}</option>
+                        {% endfor %}
+                        </select>
+                        <label for="recipe_category">
+                        <span class="red-text">Recipe Category</span>
+                        required
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- A short decsription of recipe -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                        <textarea id="recipe_description" name="recipe_description" minlength="5"
+                        maxlength="200" class="materialize-textarea validate" required></textarea>
+                        <label for="recipe_description">A brief of your recipe</label>
+                    </div>
+                </div>
+
+                <!-- recipe photo -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-image light-blue-text text-darken-4 material-icons prefix" aria-hidden="true"></i>
+                        <input id="img_src" name="img_src" class="validate" type="url" minlength="15"
+                        placeholder="Recipe Photo URL" pattern="https?:\/\/.+(jpg|jpeg|gif|bmp|png|tiff)" autocomplete="off">
+                        <label for="img_src">optional
+                        <i class="fas fa-question-circle tooltipped" data-position="right"
+                        data-tooltip="If you don't have one, we'll add one<br>for you based on your recipe!" aria-hidden="true"></i>
+                        </label>
+                        <h5 id="img_error" class="red-text bold center-align"></h5>
+                    </div>
+                
+                <div id="img_new" class="col s12 center-align"></div>
+                </div>
+                
+                <div class="row">
+			        <!-- total hours -->
+                    <div class="input-field col s6 m3">
+                        <i class="fas fa-hourglass-half light-blue-text text-darken-4   material-icons prefix" aria-hidden="true"></i>
+                        <input id="total_hours" name="total_hours" type="number" min="0" max="99"
+                        placeholder="Hours" class="validate" autocomplete="off">
+                        <label for="total_hrs">
+                            optional
+                        <i class="fas fa-question-circle hide-on-small-only tooltipped"
+                        data-position="right" data-tooltip="0 - 99" aria-hidden="true"></i>
+                        </label>
+                    </div>
+
+                    <!-- total minutes -->
+                    <div class="input-field col s6 m3">
+                        <i class="fas fa-stopwatch light-blue-text text-darken-4 material-icons prefix" aria-hidden="true"></i>
+                        <input id="total_minutes" name="total_minutes" type="number" min="0" max="59"
+                        placeholder="minutes" autocomplete="off" class="form-control validate" required>
+                        <label for="total_minutes">
+                        <span class="red-text">*</span>
+                        required
+                        <i class="fas fa-question-circle hide-on-small-only tooltipped"
+                        data-position="right" data-tooltip="0 - 59" aria-hidden="true"></i>
+                    </label>
+                    </div>
+
+                    <!--Date-->
+                    <div class="input-field col s6 m3">
+                        <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+                        <input id="date" name="date" type="text" class="datepicker validate" required>
+                        <label for="date">Date</label>
+                    </div>
+                </div>
+            
+                
+            </div>
+
+            <!-- Ingredients -->
+            <div class="row card recipe-card new-recipe">
+                <h4 class="teal-text text-darken-1 center-align">Ingredients</h4>
+                    <div class="new-ingredient ingredient row">
+                        <!-- ingredient amount / quantity -->
+                        <div class="input-field col s12 m3 l2">
+                            <i class="fas fa-hashtag light-blue-text text-darken-4 material-icons prefix" aria-hidden="true"></i>
+                            <input id="ingredient_amount" name="ingredient_amount" type="text"
+                            class="ingredient_amount validate" autocomplete="off" placeholder="Amount"
+                            pattern="^[\d\/\-\. ]{1,10}$" minlength="1" maxlength="10" required>
+                            <label for="ingredient_amount">
+                                <span class="red-text">*</span>
+                                required
+                            </label>
+                        </div>
+
+                        <!-- ingredient measurement-->
+
+                        <div class="input-field col s12 m3 l2">
+                            <i class="fas fa-utensil-spoon light-blue-text text-darken-4 material-icons prefix" aria-hidden="true"></i>
+                            <select id="measurement_units" name="measurement_units" class="form-control validate" required>
+                             <option value="" disabled selected>Choose...</option>
+                                {% for measurement in measurements %}
+                                    <option value="{{measurement_units}}">{{measurement_units}}</option>
+                                {% endfor %}
+                            </select>
+                            <label for="measurement_units">Select</label>
+                        </div>
+
+                        <!-- ingredient -->
+                        <div class="input-field col s12 m5">
+                            <i class="fas fa-egg light-blue-text text-darken-4 material-icons prefix" aria-hidden="true"></i>
+                            <input id="ingredient_name" name="ingredient_name" type="text"
+                            class="ingredient_name validate" autocomplete="off" pattern="^.{3,100}$"
+                            minlength="3" maxlength="100" placeholder="Ingredient" required>
+                            <label for="ingredient_name">
+                            <span class="red-text">*</span>
+                            required
+                            </label>
+                        </div>
+
+                        <!-- add another ingredient -->
+                        <button type="button" class="add-ingredient btn teal lighten-1">
+                            <i class="fas fa-plus material-icons" aria-hidden="true"></i>
+                        </button>
+                
+                        <!-- remove last ingredient -->
+                        <button type="button" class="remove-ingredient btn pink lighten-2 text-shadow-2">
+                            <i class="fas fa-minus material-icons" aria-hidden="true"></i>
+                        </button>
+
+                    </div>
+            </div>
+
+            <!-- Directions -->
+            <div class="row card z-depth-2 recipe-card new-recipe">
+
+                <h4 class="teal-text text-darken-1 center-align">Directions</h4>
+                
+                <div class="new-direction direction row">
+                    
+                    <!-- direction -->
+                    <div class="input-field col s11">
+                        <i class="fas fa-align-justify light-blue-text text-darken-4 material-icons prefix" aria-hidden="true"></i>
+                        <textarea id="directions" name="directions" autocomplete="off" minlength="5" maxlength="500"
+                        class="directions validate materialize-textarea"
+                        placeholder="list each direction one per line" required></textarea>
+                        <label for="directions">
+                        <span class="red-text">*</span>
+                        required
+                        </label>
+                    </div>
+
+                    <!-- add another direction -->
+                    <button type="button" class="add-direction btn teal lighten-1">
+                        <i class="fas fa-plus material-icons" aria-hidden="true"></i>
+                    </button>
+    
+                    <!-- remove last direction -->
+                    <button type="button" class="remove-direction btn  red lighten-2 ">
+                        <i class="fas fa-minus material-icons" aria-hidden="true"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- submit/cancel button -->
+            <div class="row center-align">
+                <div class="col s12 m10 offset-m1 l8 offset-l2 card z-depth-2">
+
+                    <!-- Save to Favorites  -->
+                    <h6 class="bold red-text text-darken-2 upper">
+                        <i class="fas fa-heart teal-text text-lighten-1 material-icons" aria-hidden="true"></i>
+                        Wanna save your favourite recipe?
+                    </h6>
+                    <div class="switch">
+                        <label for="add_favs">
+                            <span class="red-text text-darken-2 bold toggle-text">NO</span>
+                            <input id="add_favs" name="add_favs" type="checkbox">
+                            <span class="lever"></span>
+                            <span class="red darken-2 bold toggle-text white-text">YES</span>
+                        </label>
+                    </div>
+                    <br>
+                        <div class="divider teal lighten-2"></div>
+                        <div class="divider light-blue darken-4"></div>
+                    <br>
+
+                    <button type="submit" class="btn-large teal darken-1 text-shadow">
+                        Edit Recipe <i class="fas fa-plus-square right"></i>
+                    </button>
+                    <button type="reset" class="waves-effect btn-large red darken-2 bold text-shadow-2"
+                        onclick="history.go(-1)">
+                        Cancel
+                        <i class="fas fa-times-circle material-icons right hide-on-small-only" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+            
+        </form>
+    </div>
+
+{% endblock %}

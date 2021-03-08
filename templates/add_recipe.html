@@ -25,13 +25,13 @@
                     <div class="input-field col s12">
                         <i class="fas fa-cocktail prefix light-blue-text text-darken-4"></i>
                         <select id="recipe_category" name="recipe_category" class="form-control validate" required>
-                        <option value="" disabled selected>Recipe Category</option>
+                             <option value="" disabled selected>Choose Category</option>
                         {% for category in categories %}
-                        <option value="{{ recipe_category }}">{{ recipe_category }}</option>
+                            <option value="{{ category.recipe_category }}">{{ category.recipe_category}}</option>
                         {% endfor %}
                         </select>
                         <label for="recipe_category">
-                        <span class="red-text">*</span>
+                        <span class="red-text">Recipe Category</span>
                         required
                         </label>
                     </div>

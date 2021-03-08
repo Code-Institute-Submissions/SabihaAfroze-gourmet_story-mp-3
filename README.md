@@ -53,9 +53,8 @@ I have decided to build an online cookbook project, since I personally like to c
 
 -  *view the site* from **any device** *(mobile, tablet, desktop)*.
 -  *view all recipes* as a **Guest**.
--  *filter recipes* by **dessert type**.
--  *sort/order recipes* by **author, favorites, last updated, recipe name, total time, and views**.
--  **limit** the number of *recipes* to display, or see *all recipes*.
+-  *Search recipes* by **Recipe type** & **Recipe Name**
+-  *see *all recipes*.
 -  *create* my **own profile**.
 -  *add* my **own recipes**.
 -  *edit* my **own recipes**.
@@ -66,12 +65,7 @@ I have decided to build an online cookbook project, since I personally like to c
 -  *save recipes* in **my favorites**.
 -  *remove recipes* from **my favorites**.
 -  *see instructions* on how to **add a recipe**.
--  **print** a *particular recipe*.
--  **share** a *particular recipe*.
--  *see* **recommended recipes** after *viewing a recipe*.
--  *see* the **total views** of *a recipe*.
--  *see* how many people **like** my *recipes*.
--  *see* a cooking/baking **conversion table**.
+
 
 ### Design
 
@@ -88,6 +82,7 @@ I like bright and cheerful colors and designs for my website.
 
 #### Color Scheme
 
+- I used color from the vibrant color palette of (https://materializecss.com/)
 
 #### Icons
 
@@ -98,7 +93,7 @@ I like bright and cheerful colors and designs for my website.
 
 #### Typography
 
-
+- I have used Merriweather Sans font from google font.
 
 ### Wireframes
 
@@ -106,13 +101,14 @@ For my wireframes, I have used [Balsamiq Wireframes](https://balsamiq.com/) as i
 
 All of my wireframes for this project can be found [here](https://github.com/SabihaAfroze/gourmet_story-mp-3/tree/master/wireframes).
 
+But for some reason my initial concept is not completely similar to that final one.
+
 ##### back to [top](#table-of-contents)
 
 ---
 
 ## Features
 
-Cuurently I can not build the whole project, just submitting the idea of whole project.
 
 ### Existing Features
 
@@ -128,8 +124,6 @@ Cuurently I can not build the whole project, just submitting the idea of whole p
 **Log Out of Account**
 - Users can easily log out of their account with the click of a button.
 
-**Delete Account**
-- Users can delete their entire account, but a warning is provided to first validate their password, and advise that all of their own recipes will also be deleted, and their favorites removed.
 
 **View All Recipes**
 
@@ -141,10 +135,20 @@ Cuurently I can not build the whole project, just submitting the idea of whole p
 
 **View a Recipe**
 
+
+
+
+**Admin Superuser** - Admin can add recipe category, edit category ,update category and delete category completely.
+
+
+
+### Features Left to Implement
+
 **Update a Recipe**
 
 
 **Delete a Recipe**
+
 
 **Save a Recipe to Favorites**
 - Users can save their own recipes, or recipes submitted by other users, directly into their profile for quicker access next time.
@@ -152,10 +156,8 @@ Cuurently I can not build the whole project, just submitting the idea of whole p
 **Remove a Recipe from Favorites**
 - If a user no longer likes a recipe, or simply wants to remove it from their favorites, a single click can remove a recipe.
 
-**Admin Superuser**
-
-### Features Left to Implement
-
+**Delete Account**
+- Users can delete their entire account, but a warning is provided to first validate their password, and advise that all of their own recipes will also be deleted, and their favorites removed.
 
 ##### back to [top](#table-of-contents)
 
@@ -186,7 +188,7 @@ Cuurently I can not build the whole project, just submitting the idea of whole p
     - [Python 3.6.7](https://www.python.org/) - Used as the back-end programming language.
     - [MongoDB Atlas](https://www.mongodb.com/) - Used to store my database in the 'cloud'.
     - [PyMongo 3.8.0](https://api.mongodb.com/python/current/) - Used as the Python API for MongoDB.
-    - [Python dotenv](https://github.com/theskumar/python-dotenv) - Used to get/set values in `.env` file.
+   
 
 ##### back to [top](#table-of-contents)
 
@@ -208,25 +210,11 @@ Cuurently I can not build the whole project, just submitting the idea of whole p
 
 **Profile**
 
-As a **standard user**, there are four profile buttons.
+As a **standard user**, there are two profile buttons.
 
-- *View your own submitted recipes*:
+- *View your profile*:
    
-- *View recipes you've saved*:
-    
-- *Change your password*:
-   
-- *Delete account*:
-
-
-**Printing a Recipe**
-
-
-
-**Share a Recipe**
-
-
-
+- *Add new recipe*:
 
 ### Validators
 
@@ -246,8 +234,9 @@ As a **standard user**, there are four profile buttons.
 
 ### Compatibility
 
+I have checked Firefox, google chrome and internet explorer and on various devices. The website is responsive to all devices and in inter explorer color variation occured.
 
-### Known Issues
+
 
 
 ##### back to [top](#table-of-contents)
@@ -299,19 +288,16 @@ recipe_name: <string>
 recipe_description: <string>
 recipe_category: <string>
 ingredient_amount: <array>
-ingredient_measurement: <array>
+measurement_units: <array>
 ingredient_name: <array>
-preparations: <array>
+directions: <array>
 total_hours: <string>
 total_minutes: <string>
 total_time: <int32>
 img_src: <string>
 author: <ObjectId>
 date: <string>
-date_updated: <string>
-last_edit: <int32>
-views: <int32>
-user_favourites: <int32>
+user_favs: <int32>
 ```
 
 **USERS**
@@ -363,14 +349,18 @@ This site is currently deployed on [Heroku](https://www.heroku.com/) using the *
 
 Sources of the images used on this site:
 
-- **favicon** : [Clipart-Library](http://clipart-library.com/kawaii-cookie-cliparts.html)
+-https://www.pexels.com/
 
 
 ### Code
-
-
+1. Code institutes mini project on Data centric development
+2. https://github.com/TravelTimN/ci-milestone04-dcd
+3. https://www.w3schools.com/
+4. https://stackoverflow.com/
+5. https://codepen.io/
 
 ### Acknowledgements
+1. Code institutes tutor and mentor.
 
 
 
